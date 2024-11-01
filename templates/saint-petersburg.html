@@ -1,0 +1,11 @@
+{% extends "menu.html" %}
+
+{%block content%}
+    <h2>{{page_name}}</h2>
+    <h3>Станции:</h3>
+    {%for station in stations%}
+        {{station}} <button>Подробнее</button> <br> <br>
+    {%endfor%}
+    <br>
+    <button><a href="/metro" style="text-decoration: none; color: black">На главную</a></button>
+{%endblock%}

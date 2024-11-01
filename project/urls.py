@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
+from task1.views import menu_view, moscow_view, petersburg_view, sign_up
 
 urlpatterns = [
+    path("", TemplateView.as_view(template_name="main.html")),
     path('admin/', admin.site.urls),
+    path("metro/", menu_view),
+    path("metro/moscow/", moscow_view),
+    path("metro/saint-petersburg/", petersburg_view),
+    path("registration_django/", sign_up),
 ]

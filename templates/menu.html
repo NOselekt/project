@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>метро</title>
+</head>
+<body>
+    {% block pagename %}
+    <h1>МЕТРО</h1>
+    {% endblock %}
+    {%block menu%}
+    <a href="">Главная страница</a> <br>
+    {%for key, value in metros.items%}
+    <a href="{{key}}">{{value}}</a> <br>
+    {% endfor %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

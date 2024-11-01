@@ -27,3 +27,11 @@ class Game(models.Model):
 # Game.objects.create(title="Super Mario", cost=70, size=30, description="New mushroom has been eaten!", age_limited=False)
 # Game.objects.get(id=2).buyer.set((vitalya,))
 # Game.objects.get(id=3).buyer.set((gaben, vitalya, misha))
+
+
+class Station(models.Model):
+    name = models.CharField(max_length=37)
+    city = models.CharField(max_length=16, default="saint-petersburg")
+    branch = models.CharField(max_length=20)
+    transfer = models.TextField(default="")
+    visiter = models.ManyToManyField(Buyer, related_name="stations")
